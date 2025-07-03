@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Builder
@@ -31,5 +32,8 @@ public class Product {
     private Double price;
     @Column(name = "year_of_manufacture")
     private Date yearOfManufacture;
+
+    @Column(name = "discount", precision = 5, scale = 2, nullable = false)
+    private BigDecimal discount;
 
 }
