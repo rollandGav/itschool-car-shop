@@ -1,5 +1,6 @@
 package com.project.itschool_car_shop.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,6 +38,7 @@ public class Product {
     private BigDecimal discount;
 
     @ManyToMany(mappedBy = "products")
+    @JsonIgnore
     private List<Order> orders;
 
 }

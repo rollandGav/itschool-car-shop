@@ -1,6 +1,7 @@
 package com.project.itschool_car_shop.models.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,10 +31,11 @@ public class Order {
 
     @ManyToMany
     @JoinTable(
-            name = "orders_products",
+            name = "order_products",
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn( name = "product_id")
     )
+    @JsonIgnore
     private List<Product> products;
 
 }
