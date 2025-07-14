@@ -36,3 +36,7 @@ INSERT INTO order_products (order_id, product_id) VALUES
   (3, 2), (3, 4), (3, 6),  -- Mihai ordered Focus, Passat, C300
   (4, 5),                  -- Andrei ordered Corolla
   (5, 1), (5, 6);          -- Elena ordered Logan & C300
+
+INSERT INTO users (username, password, role) VALUES
+('admin', '{noop}admin', 'ADMIN'),
+('user', '{noop}user', 'USER');

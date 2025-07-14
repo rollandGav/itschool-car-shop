@@ -4,6 +4,15 @@ DROP TABLE IF EXISTS orders CASCADE;
 DROP TABLE IF EXISTS products CASCADE;
 DROP TABLE IF EXISTS customers CASCADE;
 DROP TABLE IF EXISTS addresses CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+
+-- Create users table for authentication
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(100) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(50) NOT NULL
+);
 
 -- Create addresses table
 CREATE TABLE addresses (
