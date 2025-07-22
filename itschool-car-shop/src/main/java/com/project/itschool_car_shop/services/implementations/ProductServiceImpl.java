@@ -36,6 +36,23 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductDTO saveProduct(ProductDTO dto) {
+        Product product = Product.builder()
+                .brand(dto.getBrand())
+                .model(dto.getModel())
+                .colour(dto.getColour())
+                .capacity(dto.getCapacity())
+                .price(dto.getPrice())
+                .yearOfManufacture(dto.getYearOfManufacture())
+                .discount(dto.getDiscount())
+                .build();
+
+        Product saved = repository.save(product);
+        dto.setId(saved.getId());
+        return dto;
+    }
+
+    @Override
     public void deleteProductById(Long id) {
         repository.deleteById(id);
     }

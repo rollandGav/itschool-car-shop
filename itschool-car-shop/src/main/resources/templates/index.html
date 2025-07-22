@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Car Shop Home</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h1>Welcome to Car Shop</h1>
+
+<div sec:authorize="isAuthenticated()">
+    Logged in as: <span sec:authentication="name"></span>
+    | <a th:href="@{/logout}">Logout</a>
+</div>
+<div sec:authorize="!isAuthenticated()">
+    <a th:href="@{/login}">Login</a> |
+    <a th:href="@{/register}">Register</a>
+</div>
+
+<div>
+    <a th:href="@{/products}" class="button">View Products</a>
+    <a th:href="@{/customers}" class="button">View Customers</a>
+    <a sec:authorize="hasRole('ADMIN')" th:href="@{/products/new}" class="button">Add Product</a>
+</div>
+</body>
+</html>

@@ -9,5 +9,5 @@ public interface ProductService {
     List<ProductDTO> findAllProducts();
     List<ProductDTO> findProductByBrandAndColourAndCapacityAndPrice(String brand, String colour, int capacity, double price);
     void deleteProductById(Long id);
-
+    ProductDTO saveProduct(ProductDTO dto);
 }

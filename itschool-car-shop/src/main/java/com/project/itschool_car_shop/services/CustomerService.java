@@ -8,5 +8,6 @@ public interface CustomerService {
     CustomerDTO createCustomer(CustomerDTO customerDTO);
     List<CustomerDTO> findCustomers(String name, String email);
     List<CustomerDTO> findCustomersByQuery(String name, String email);
+    List<CustomerDTO> findAllCustomers();
 
 }

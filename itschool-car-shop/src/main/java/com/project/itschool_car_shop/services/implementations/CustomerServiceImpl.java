@@ -52,4 +52,15 @@ public class CustomerServiceImpl implements CustomerService {
                 .map(customer -> objectMapper.convertValue(customer, CustomerDTO.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<CustomerDTO> findAllCustomers() {
+        return customerRepository.findAll().stream()
+                .map(customer -> CustomerDTO.builder()
+                        .id(customer.getId())
+                        .name(customer.getName())
+                        .email(customer.getEmail())
+                        .build())
+                .toList();
+    }
 }

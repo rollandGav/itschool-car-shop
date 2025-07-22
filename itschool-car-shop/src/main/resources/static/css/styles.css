@@ -1,0 +1,30 @@
+body {
+  font-family: Arial;
+  background: #f9f9f9;
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+h1, h2 {
+  color: #333;
+}
+.button {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.button:hover {
+  background: #0056b3;
+}
